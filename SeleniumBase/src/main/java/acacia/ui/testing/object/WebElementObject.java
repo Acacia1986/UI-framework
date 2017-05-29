@@ -22,20 +22,28 @@ public class WebElementObject implements WebElement {
     String objectName;
 
     public WebElementObject(WebDriver browser, By locateBy, Long timeout, String objectName) {
+        this(browser, locateBy, objectName);
+        this.timeout = timeout;
+
+    }
+
+    public WebElementObject(WebDriver browser, By locateBy, String objectName) {
         this.browser = browser;
         this.locateBy = locateBy;
-        this.timeout = timeout;
         this.objectName = objectName;
         this.logger = LoggerFactory.getLogger(WebElementObject.class);
+
     }
 
     /**
      * Get locate by
+     *
      * @return
      */
-    public By getBy(){
+    public By getBy() {
         return locateBy;
     }
+
     /**
      * Get the object name
      *
@@ -56,6 +64,7 @@ public class WebElementObject implements WebElement {
     /**
      * perform a action click for element
      * Performs a click action on this object at the offset location specified.
+     *
      * @param xOffSet
      * @param yOffSet
      */
@@ -64,10 +73,11 @@ public class WebElementObject implements WebElement {
         actions.moveToElement(browser.findElement(locateBy), xOffSet, yOffSet).click().perform();
     }
 
-    public void clickAndWaitUntilVisible(Long timeout){
-        WebDriverWait wait = new WebDriverWait(browser,timeout);
+    public void clickAndWaitUntilVisible(Long timeout) {
+        WebDriverWait wait = new WebDriverWait(browser, timeout);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(getBy()));
     }
+
     public void submit() {
         logger.info("Try to Submit the element" + getObjectName());
         browser.findElement(locateBy).submit();
@@ -78,12 +88,11 @@ public class WebElementObject implements WebElement {
         browser.findElement(locateBy).sendKeys(keysToSend);
     }
 
-    public void sendKeys(Boolean clearOrNot,CharSequence... keyToSend){
-        if (clearOrNot){
+    public void sendKeys(Boolean clearOrNot, CharSequence... keyToSend) {
+        if (clearOrNot) {
             clear();
             sendKeys(keyToSend);
-        }
-        else {
+        } else {
             sendKeys(keyToSend);
         }
     }
@@ -94,7 +103,7 @@ public class WebElementObject implements WebElement {
     }
 
     public String getTagName() {
-        return  browser.findElement(locateBy).getTagName();
+        return browser.findElement(locateBy).getTagName();
     }
 
     public String getAttribute(String name) {
@@ -128,6 +137,7 @@ public class WebElementObject implements WebElement {
 
     /**
      * Get the location of the object.
+     *
      * @return
      */
     public Point getLocation() {
@@ -136,6 +146,7 @@ public class WebElementObject implements WebElement {
 
     /**
      * Get the size of the object.
+     *
      * @return
      */
     public Dimension getSize() {
@@ -144,6 +155,7 @@ public class WebElementObject implements WebElement {
 
     /**
      * Get the rect of the object
+     *
      * @return
      */
     public Rectangle getRect() {
@@ -152,6 +164,7 @@ public class WebElementObject implements WebElement {
 
     /**
      * Get the css value of object
+     *
      * @param propertyName
      * @return
      */
@@ -161,6 +174,7 @@ public class WebElementObject implements WebElement {
 
     /**
      * Take a screenshot for object
+     *
      * @param target
      * @param <X>
      * @return
