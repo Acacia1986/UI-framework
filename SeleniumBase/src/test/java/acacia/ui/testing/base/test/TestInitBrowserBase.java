@@ -21,4 +21,11 @@ public class TestInitBrowserBase extends InitBrowserBase{
     public void test_initBrowser_firefox(){
         initBrowser(BrowserType.FIREFOX,browserPath_FF,true);
     }
+
+
+
+    @Test
+    public void test_browser_logic(){
+
+    }
 }

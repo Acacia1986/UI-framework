@@ -110,4 +110,5 @@ public class InitBrowserBase {
             browser.manage().window().maximize();
         return browser;
     }
+
 }

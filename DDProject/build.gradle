@@ -1,0 +1,14 @@
+group 'acacia.ui.automation'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile ('log4j:log4j:1.2.17', 'org.slf4j:slf4j-simple:1.6.1','org.testng:testng:6.1.1','dom4j:dom4j:1.6.1')
+}

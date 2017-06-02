@@ -1,0 +1,20 @@
+<project name="test">
+    <description>
+        This project will run tests against the studio application configured in the file: '${property.file}'.
+    </description>
+
+    <!-- provide suite tests for override by the ms-test-runner.xml -->
+    <property name="acceptance-suite" value="./suiteFiles/ms-acceptance-suite.xml" />
+    <property name="developer-suite" value="./suiteFiles/ms-developer-suite.xml" />
+    <property name="smoke-suite" value="./suiteFiles/ms-smoke-suite.xml" />
+    <property name="unstable-suite" value="./suiteFiles/ms-unstable-suite.xml" />
+    <property name="qa-suite" value="./suiteFiles/ms-qa-suite.xml" />
+
+    <!-- build loctations and artifacts -->
+    <property name="test.report.dir" value="${basedir}/ms-reports" />
+    <property name="asimo.studio.tests.jar" value="MicroServicesTests.jar" />
+
+    <!-- we do this here to set variables then import the functionality from the asimo-test-runner.xml -->
+    <import file="./asimo-test-runner.xml"/>
+
+</project>
