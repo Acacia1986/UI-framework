@@ -14,7 +14,7 @@ import java.util.List;
 public class ReadXMLFile {
 
 
-    public static void readXMLwithSAXReader(String xmlPath) {
+    public static void readXMLWithSAXReader(String xmlPath) {
         SAXReader reader = new SAXReader();
         Document document = null;
         String xmlFile = System.getProperty("user.dir") + File.separator + xmlPath;

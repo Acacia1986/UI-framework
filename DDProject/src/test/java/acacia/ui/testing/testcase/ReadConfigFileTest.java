@@ -2,6 +2,7 @@ package acacia.ui.testing.testcase;
 
 import acacia.ui.testing.utils.ReadConfigFile;
 import acacia.ui.testing.utils.ReadXMLFile;
+import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -44,7 +45,13 @@ public class ReadConfigFileTest {
     @Test
     public void test_readxmlFile() {
         String xmlFile = "src/test/resources/config/config_1.xml";
-        ReadXMLFile.readXMLwithSAXReader(xmlFile);
+        ReadXMLFile.readXMLWithSAXReader(xmlFile);
+    }
+
+    @Test
+    public void test_123(){
+        String test = "YJ";
+        Boolean bollean = StringUtils.isBlank(test);;
     }
 
 

@@ -1,4 +1,5 @@
 rootProject.name = 'UIFramework'
 include 'SeleniumBase'
 include 'DDProject'
+include 'DDProjectTestCase'
 
