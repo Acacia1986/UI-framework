@@ -10,5 +10,5 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+   // Compile ('org.testng:testng:6.1.1',"org.slf4j:slf4j-simple:1.6.1")
 }
